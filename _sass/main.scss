@@ -1,0 +1,66 @@
+
+.custom-search {
+position: absolute;
+right: 20px;
+top: 1px;
+}
+#express-form-typeahead {
+background-color: transparent;
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Ios-search.svg);
+background-position: 5px center;
+background-repeat: no-repeat;
+background-size: 24px 24px;
+border: none;
+cursor: pointer;
+height: 37px;
+margin: 3px 0;
+padding: 0 0 0 34px;
+position: relative;
+-webkit-transition: width 400ms ease, background 400ms ease;
+transition:         width 400ms ease, background 400ms ease;
+width: 0;
+}
+#express-form-typeahead:focus {
+background-color: #fff;
+border: 2px solid black;
+cursor: text;
+outline: 0;
+width: 230px;
+}
+.search-btn {
+display: none;
+}
+input[type="search"] {
+-webkit-appearance: textfield;
+}
+#abc {
+  float: left;
+}
+
+#xyz {
+  clear: both;
+  margin-top: 15px;
+}
+
+.search-class {
+  display: block;
+}
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+    > li {
+      float: none;
+      display: inline-block;
+    }
+  }
+
+.header-nav > li {
+    display: inline-block;
+    margin-left: 1em;
+  }
+
+.header-nav > li ~ li {
+  border-left: 1px solid white;
+  padding-left: 1em;
+}
