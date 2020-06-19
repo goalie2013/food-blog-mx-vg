@@ -1,0 +1,266 @@
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-fixed pt-3">
+
+  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+    <span>Main Ingredient</span>
+    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+      <span data-feather="plus-circle"></span>
+    </a>
+  </h6>
+  <ul class="nav flex-column mb-2">
+
+      <li class="nav-item" >
+        <a class="nav-link active" id="dietary-id" href="#dietary-list" data-toggle="collapse">
+          <span data-feather="home">
+            Dietary <span class="sr-only">(current)</span>
+            <span><i id="dietary-arrow-id" class="octicon octicon-chevron-down"></i></span>
+          </span>
+        </a>
+      <div id="dietary-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <div class="inputGroup inputGroupSmall">
+            <input id="dairyFreeCheckbox" name="dairyFreeCheckbox" type="checkbox"/>
+            <label for="dairyFreeCheckbox">Dairy Free</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="eggFreeCheckbox" name="eggFreeCheckbox" type="checkbox"/>
+            <label for="eggFreeCheckbox">Egg Free</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="pescatarianCheckbox" name="pescatarianCheckbox" type="checkbox"/>
+            <label for="pescatarianCheckbox">Pescatarian?</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="veganCheckbox" name="veganCheckbox" type="checkbox"/>
+            <label for="veganCheckbox">Vegan</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="vegetarianCheckbox" name="vegetarianCheckbox" type="checkbox"/>
+            <label for="vegetarianCheckbox">Vegetarian</label>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="sortby-id" href="#sortby-list" data-toggle="collapse">
+        <span data-feather="users">
+        Sort By
+        <span><i id="sortby-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="sortby-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <h6>Date</h6>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="dateRadios1" name="sortByRadios" type="radio"/>
+            <label for="dateRadios1">Newest</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="dateRadios2" name="sortByRadios" type="radio"/>
+            <label for="dateRadios2">Oldest</label>
+          </div>
+
+        <hr class="featurette-divider">
+          <h6>Alphabetical</h6>
+          <div class="inputGroup inputGroupSmall">
+            <input id="alphabeticalRadios1" name="sortByRadios" type="radio"/>
+            <label for="alphabeticalRadios1">A-Z</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="alphabeticalRadios2" name="sortByRadios" type="radio"/>
+            <label for="alphabeticalRadios2">Z-A</label>
+          </div>
+
+        </div>
+        <hr class="featurette-divider">
+      </div>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="ingredient-id" href="#ingredient-list" data-toggle="collapse">
+        <span data-feather="file-text">
+          Ingredient
+        <span><i id="ingredient-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="ingredient-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <!--
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="beansCheckbox" value="option1" checked>
+            <label class="form-check-label" for="beansCheckbox">Beans</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="chilesCheckbox" value="option1" checked>
+            <label class="form-check-label" for="chilesCheckbox">Chiles</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="eggCheckbox" value="option1">
+            <label class="form-check-label" for="eggCheckbox">Egg</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="flordeCalabazaCheckbox" value="option1" checked>
+            <label class="form-check-label" for="flordeCalabazaCheckbox">Flor de Calabaza</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="palmitosCheckbox" value="option2">
+            <label class="form-check-label" for="palmitosCheckbox">Hearts of Palm</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="jackfruitCheckbox" value="option2">
+            <label class="form-check-label" for="jackfruitCheckbox">Jackfruit</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="mushroomCheckbox" value="option2">
+            <label class="form-check-label" for="mushroomCheckbox">Mushrooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="nopalesCheckbox" value="option2">
+            <label class="form-check-label" for="nopalesCheckbox">Nopales</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="potatoCheckbox" value="option1">
+            <label class="form-check-label" for="potatoCheckbox">Potato</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="zucchiniCheckbox" value="option1">
+            <label class="form-check-label" for="zucchiniCheckbox">Zucchini</label>
+          </div>
+          -->
+        <div class="button-group filter-button-group">
+          <div class="inputGroup inputGroupSmall" id="{{ t }}-item>">
+            <input id="beansCheckbox" name="beansCheckbox" type="checkbox"/>
+            <label for="beansCheckbox">
+              <button data-filter=".beans">Beans</button>
+            </label>
+          </div>
+          <div class="inputGroup inputGroupSmall" id="{{ t }}-item">
+
+              <button data-filter=".chile">Chiles</button>
+          </div>
+          <div class="inputGroup-ingredient inputGroupSmall" id="{{ t }}-item">
+
+              <button data-filter=".eggs">Eggs</button>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="florCalabazaCheckbox" name="florCalabazaCheckbox" type="checkbox"/>
+            <label for="florCalabazaCheckbox">Flor de <br> Calabaza</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="heartsPalmCheckbox" name="heartsPalmCheckbox" type="checkbox"/>
+            <label for="heartsPalmCheckbox">Hearts of <br> Palm</label>
+          </div>
+          <div class="inputGroup-ingredient">
+            <input id="jackfruitCheckbox" name="jackfruitCheckbox" type="checkbox"/>
+            <label for="jackfruitCheckbox" data-filter="jackfruit">Jackfruit</label>
+          </div>
+          <div class="inputGroup-ingredient">
+            <input id="mushroomCheckbox" name="mushroomCheckbox" type="checkbox"/>
+            <label for="mushroomCheckbox">Mushroom</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="nopalesCheckbox" name="nopalesCheckbox" type="checkbox"/>
+            <label for="nopalesCheckbox">Nopales</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="potatoCheckbox" name="potatoCheckbox" type="checkbox"/>
+            <label for="potatoCheckbox">Potato</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="zucchiniCheckbox" name="zucchiniCheckbox" type="checkbox"/>
+            <label for="zucchiniCheckbox">Zucchini</label>
+          </div>
+        </div>
+        </div> <!-- end of card -->
+      </div> <!-- end of ingredient-list -->
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="time-id" href="#time-list" data-toggle="collapse" >
+        <span data-feather="file">
+        Time
+        <span><i id="time-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="time-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">&lt; 15 min</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">&lt; 30 min</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option3" name="option3" type="checkbox"/>
+            <label for="option3">&lt; 1 hour</label>
+          </div>
+
+        </div>
+
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="type-id" href="#type-list" data-toggle="collapse">
+        <span data-feather="file-text">
+          Type
+        <span><i id="type-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+<!-- VALUE in input????? -->
+      <div id="type-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <div class="inputGroup inputGroupSmall">
+            <input id="drinksCheckbox" name="drinksCheckbox" type="checkbox"/>
+            <label for="drinksCheckbox">Drinks</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="mariscosCheckbox" name="mariscosCheckbox" type="checkbox"/>
+            <label for="mariscosCheckbox">Mariscos</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="panDulceCheckbox" name="panDulceCheckbox" type="checkbox"/>
+            <label for="panDulceCheckbox">Pan Dulce</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="saladCheckbox" name="saladCheckbox" type="checkbox"/>
+            <label for="saladCheckbox">Salad</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="soupCheckbox" name="soupCheckbox" type="checkbox"/>
+            <label for="soupCheckbox">Soup</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="tacosCheckbox" name="tacosCheckbox" type="checkbox"/>
+            <label for="tacosCheckbox">Tacos</label>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <span data-feather="file-text"></span>
+        Region??
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>

@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<!-- **VALUES in input form???? -->
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Gabriel Grinstein">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+    <title>{{ page.title }}</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css">
+
+    <!-- Personal Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+
+      {% include main_navigation.html %}
+
+      <div class="tabs">
+    			 <input type="radio" name="tab-control" id="tab1" checked>
+           <input type="radio" name="tab-control" id="tab2">
+
+           <ul>
+    				  <li title="Search">
+                <label for="tab1"><span>Search</span></label>
+              </li>
+
+    				  <li title="Filter">
+                <label for="tab2"><span>Filter</span></label>
+              </li>
+           </ul>
+
+       <div class="slider"><div class="indicator"></div></div>
+
+       <div class="content">
+
+       <section>
+        <!-- Html Elements for Search -->
+        <div id="search" class="col-sm-12 col-md-12 col-lg-12 p-5">
+          <div class="row">
+            <input class="w-50 mx-auto" type="text" id="search-input" placeholder="Search...">
+          </div>
+
+          <div id="xyz">
+            <ul class="row" id="results-container"></ul>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+      <!--
+      <p> Category
+        <select class="filters-select">
+          <option data-layout-mode="masonry" value="*">show all</option>
+          {% assign categories = site.categories | sort %}
+          {% for category in categories %}
+
+            <option data-layout-mode="cellsByRow" value=".{{ category | first }}">{{ category | first }}</option>
+          {% endfor %}
+        </select>
+      -->
+
+        <p> Category
+          <select class="filters-select">
+            <option data-layout-mode="masonry" value="*">show all</option>
+
+            <option data-layout-mode="cellsByRow" value=".desayuno">Desayuno</option>
+            <option data-layout-mode="cellsByRow" value=".dessert">Desserts</option>
+            <option data-layout-mode="cellsByRow" value=".drinks">Drinks</option>
+            <option data-layout-mode="cellsByRow" value=".platos">Platos</option>
+            <option data-layout-mode="cellsByRow" value=".salads">Salads</option>
+            <option data-layout-mode="cellsByRow" value=".sandwiches">Sandwiches</option>
+            <option data-layout-mode="cellsByRow" value=".soup">Soup</option>
+
+          </select>
+
+          Dietary
+          <select class="filters-select">
+            <option data-layout-mode="masonry" value="*">show all</option>
+
+            <option data-layout-mode="cellsByRow" value=".dairy-free">Dairy-Free</option>
+            <option data-layout-mode="cellsByRow" value=".egg-free">Egg-Free</option>
+            <option data-layout-mode="cellsByRow" value=".nutfree">Nut-Free</option>
+            <option data-layout-mode="cellsByRow" value=".seedfree">Seed-Free</option>
+            <option data-layout-mode="cellsByRow" value=".vegan">Vegan</option>
+            <option data-layout-mode="cellsByRow" value=".vegetarian">Vegetarian</option>
+
+          </select>
+
+          Ingredient
+          <select class="filters-select">
+            <option data-layout-mode="masonry" value="*">show all</option>
+
+            <option data-layout-mode="cellsByRow" value=".beans ">Beans</option>
+            <option data-layout-mode="cellsByRow" value=".chiles ">Chiles</option>
+            <option data-layout-mode="cellsByRow" value=".eggs ">Eggs</option>
+            <option data-layout-mode="cellsByRow" value=".flordecalabaza ">Flor de <br> Calabaza</option>
+            <option data-layout-mode="cellsByRow" value=".heartsofpalm ">Hearts of <br> Palm</option>
+            <option data-layout-mode="cellsByRow" value=".mushroom ">Mushroom</option>
+            <option data-layout-mode="cellsByRow" value=".nopales ">Nopales</option>
+            <option data-layout-mode="cellsByRow" value=".potato ">Potato</option>
+            <option data-layout-mode="cellsByRow" value=".zucchini ">Zucchini</option>
+
+          </select>
+
+          Tags
+          <select class="filters-select">
+            <option data-layout-mode="masonry" value="*">show all</option>
+            {% assign tags = site.tags | sort %}
+            {% for tag in tags %}
+              <option data-layout-mode="cellsByRow" value=".{{ tag | first }}">{{ tag | first }}</option>
+            {% endfor %}
+          </select>
+
+        </p>
+
+
+
+        <div class="grid">
+         {% for post in site.posts %}
+            {% include filter-card-layout.html %}
+          {% endfor %}
+       </div>
+
+     </section>
+   </div>
+    </div> <!-- end tabs -->
+    </div> <!-- end container -->
+
+    <script src="/assets/js/mycustomjs.js"></script>
+    <!-- Script pointing to search-script.js -->
+    <script src="/assets/js/search-script.js" type="text/javascript"></script>
+
+    <!-- Configuration -->
+    <script>
+    SimpleJekyllSearch({
+      searchInput: document.getElementById('search-input'),
+      resultsContainer: document.getElementById('results-container'),
+      searchResultTemplate: '<li class="col-sm-6 col-md-4 col-lg-4 p-2 d-flex align-items-stretch" id="abc"><div class="card mb-6 shadow-sm">{title}<div class="card-body d-flex flex-column"><p class="card-text">{excerpt}</p><div class="d-flex justify-content-between align-items-center mt-auto"><div class="btn-group align-self-end"><a href={url}><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a></div><small class="text-muted">9 mins</small></div></div></div></li>',
+      json: '/search.json'
+    })
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- jQuery Isotope Library for filtering-->
+    <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+
+    <script>
+      // init Isotope
+      var $grid = $('.grid').isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'masonry',
+
+        masonry: {
+        columnWidth: 110
+        },
+        cellsByRow: {
+          columnWidth: 220,
+          rowHeight: 220
+        }
+      });
+      // filter functions
+      var filterFns = {
+      // show if number is greater than 50
+      numberGreaterThan50: function() {
+      var number = $(this).find('.number').text();
+      return parseInt( number, 10 ) > 50;
+      },
+      // show if name ends with -ium
+      ium: function() {
+      var name = $(this).find('.name').text();
+      return name.match( /ium$/ );
+      }
+      };
+
+      // bind filter on select change
+      $('.filters-select').on( 'change', function() {
+      // get filter value from option value
+      var filterValue = this.value;
+      // use filterFn if matches value
+      filterValue = filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+      });
+      $('.filters-tags-select').on( 'change', function() {
+      // get filter value from option value
+      var filterValue = this.value;
+      // use filterFn if matches value
+      filterValue = filterFns[ filterValue ] || filterValue;
+      $grid.isotope({ filter: filterValue });
+      });
+
+    </script>
+
+  </body>
+</html>

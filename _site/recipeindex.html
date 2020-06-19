@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<!-- **VALUES in input form???? -->
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Gabriel Grinstein">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+    <title>Ninja Turtles</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap">
+
+    <!-- Personal Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/recipeindexstyles.css">
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top" id="navbar-id" >
+
+  <a class="navbar-brand" href="/index.html">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_page_navbar" aria-controls="main_page_navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main_page_navbar">
+    <ul class="navbar-nav mr-auto d-flex justify-content-center header-nav">
+      <li class="nav-item about-nav">
+        <a class="nav-link" href="/about/" >About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item recipe-index-nav">
+        <a class="nav-link" href="/recipeindex.html" style="color: white;">Recipe Index</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/search/" >Search </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tabtrial/" >Tabtrial </a>
+      </li>
+    </ul>
+    <!-- Search within Navbar -->
+    <!--
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  -->
+
+    <!--
+    <div class="span3 widget-span widget-type-raw_html custom-search" style="" data-widget-type="raw_html" data-x="4" data-w="3">
+      <div class="cell-wrapper layout-widget-wrapper">
+        <span id="hs_cos_wrapper_module_14308928327274411" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_raw_html" style="" data-hs-cos-general-type="widget" data-hs-cos-type="raw_html">
+            <input required="" name="q" placeholder="Search..." class="form-control tt-input" id="express-form-typeahead" autocomplete="off" spellcheck="false" dir="auto" type="text">
+            <ul id="results" class="search-results-ul card shadow border border-top-0"></ul>
+            <button class="search-btn" type="submit"><span class="icon"></span></button>
+        </span>
+      </div>
+    </div>
+    <!--end layout-widget-wrapper -->
+
+
+  </div>
+</nav>
+
+
+      <div class="row">
+
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="position-fixed pt-3">
+
+  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+    <span>Main Ingredient</span>
+    <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+      <span data-feather="plus-circle"></span>
+    </a>
+  </h6>
+  <ul class="nav flex-column mb-2">
+
+      <li class="nav-item" >
+        <a class="nav-link active" id="dietary-id" href="#dietary-list" data-toggle="collapse">
+          <span data-feather="home">
+            Dietary <span class="sr-only">(current)</span>
+            <span><i id="dietary-arrow-id" class="octicon octicon-chevron-down"></i></span>
+          </span>
+        </a>
+      <div id="dietary-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <div class="inputGroup inputGroupSmall">
+            <input id="dairyFreeCheckbox" name="dairyFreeCheckbox" type="checkbox"/>
+            <label for="dairyFreeCheckbox">Dairy Free</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="eggFreeCheckbox" name="eggFreeCheckbox" type="checkbox"/>
+            <label for="eggFreeCheckbox">Egg Free</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="pescatarianCheckbox" name="pescatarianCheckbox" type="checkbox"/>
+            <label for="pescatarianCheckbox">Pescatarian?</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="veganCheckbox" name="veganCheckbox" type="checkbox"/>
+            <label for="veganCheckbox">Vegan</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="vegetarianCheckbox" name="vegetarianCheckbox" type="checkbox"/>
+            <label for="vegetarianCheckbox">Vegetarian</label>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="sortby-id" href="#sortby-list" data-toggle="collapse">
+        <span data-feather="users">
+        Sort By
+        <span><i id="sortby-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="sortby-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <h6>Date</h6>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="dateRadios1" name="sortByRadios" type="radio"/>
+            <label for="dateRadios1">Newest</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="dateRadios2" name="sortByRadios" type="radio"/>
+            <label for="dateRadios2">Oldest</label>
+          </div>
+
+        <hr class="featurette-divider">
+          <h6>Alphabetical</h6>
+          <div class="inputGroup inputGroupSmall">
+            <input id="alphabeticalRadios1" name="sortByRadios" type="radio"/>
+            <label for="alphabeticalRadios1">A-Z</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="alphabeticalRadios2" name="sortByRadios" type="radio"/>
+            <label for="alphabeticalRadios2">Z-A</label>
+          </div>
+
+        </div>
+        <hr class="featurette-divider">
+      </div>
+
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="ingredient-id" href="#ingredient-list" data-toggle="collapse">
+        <span data-feather="file-text">
+          Ingredient
+        <span><i id="ingredient-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="ingredient-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <!--
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="beansCheckbox" value="option1" checked>
+            <label class="form-check-label" for="beansCheckbox">Beans</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="chilesCheckbox" value="option1" checked>
+            <label class="form-check-label" for="chilesCheckbox">Chiles</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="eggCheckbox" value="option1">
+            <label class="form-check-label" for="eggCheckbox">Egg</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="flordeCalabazaCheckbox" value="option1" checked>
+            <label class="form-check-label" for="flordeCalabazaCheckbox">Flor de Calabaza</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="palmitosCheckbox" value="option2">
+            <label class="form-check-label" for="palmitosCheckbox">Hearts of Palm</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="jackfruitCheckbox" value="option2">
+            <label class="form-check-label" for="jackfruitCheckbox">Jackfruit</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="mushroomCheckbox" value="option2">
+            <label class="form-check-label" for="mushroomCheckbox">Mushrooms</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="nopalesCheckbox" value="option2">
+            <label class="form-check-label" for="nopalesCheckbox">Nopales</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="potatoCheckbox" value="option1">
+            <label class="form-check-label" for="potatoCheckbox">Potato</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="ingredientCheckBox" id="zucchiniCheckbox" value="option1">
+            <label class="form-check-label" for="zucchiniCheckbox">Zucchini</label>
+          </div>
+          -->
+        <div class="button-group filter-button-group">
+          <div class="inputGroup inputGroupSmall" id="-item>">
+            <input id="beansCheckbox" name="beansCheckbox" type="checkbox"/>
+            <label for="beansCheckbox">
+              <button data-filter=".beans">Beans</button>
+            </label>
+          </div>
+          <div class="inputGroup inputGroupSmall" id="-item">
+
+              <button data-filter=".chile">Chiles</button>
+          </div>
+          <div class="inputGroup-ingredient inputGroupSmall" id="-item">
+
+              <button data-filter=".eggs">Eggs</button>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="florCalabazaCheckbox" name="florCalabazaCheckbox" type="checkbox"/>
+            <label for="florCalabazaCheckbox">Flor de <br> Calabaza</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="heartsPalmCheckbox" name="heartsPalmCheckbox" type="checkbox"/>
+            <label for="heartsPalmCheckbox">Hearts of <br> Palm</label>
+          </div>
+          <div class="inputGroup-ingredient">
+            <input id="jackfruitCheckbox" name="jackfruitCheckbox" type="checkbox"/>
+            <label for="jackfruitCheckbox" data-filter="jackfruit">Jackfruit</label>
+          </div>
+          <div class="inputGroup-ingredient">
+            <input id="mushroomCheckbox" name="mushroomCheckbox" type="checkbox"/>
+            <label for="mushroomCheckbox">Mushroom</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="nopalesCheckbox" name="nopalesCheckbox" type="checkbox"/>
+            <label for="nopalesCheckbox">Nopales</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="potatoCheckbox" name="potatoCheckbox" type="checkbox"/>
+            <label for="potatoCheckbox">Potato</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="zucchiniCheckbox" name="zucchiniCheckbox" type="checkbox"/>
+            <label for="zucchiniCheckbox">Zucchini</label>
+          </div>
+        </div>
+        </div> <!-- end of card -->
+      </div> <!-- end of ingredient-list -->
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="time-id" href="#time-list" data-toggle="collapse" >
+        <span data-feather="file">
+        Time
+        <span><i id="time-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+      <div id="time-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option1" name="option1" type="checkbox"/>
+            <label for="option1">&lt; 15 min</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option2" name="option2" type="checkbox"/>
+            <label for="option2">&lt; 30 min</label>
+          </div>
+
+          <div class="inputGroup inputGroupSmall">
+            <input id="option3" name="option3" type="checkbox"/>
+            <label for="option3">&lt; 1 hour</label>
+          </div>
+
+        </div>
+
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="type-id" href="#type-list" data-toggle="collapse">
+        <span data-feather="file-text">
+          Type
+        <span><i id="type-arrow-id" class="octicon octicon-chevron-down"></i></span>
+        </span>
+      </a>
+
+<!-- VALUE in input????? -->
+      <div id="type-list" class="collapse">
+        <div class="card mb-6 shadow-sm">
+          <div class="inputGroup inputGroupSmall">
+            <input id="drinksCheckbox" name="drinksCheckbox" type="checkbox"/>
+            <label for="drinksCheckbox">Drinks</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="mariscosCheckbox" name="mariscosCheckbox" type="checkbox"/>
+            <label for="mariscosCheckbox">Mariscos</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="panDulceCheckbox" name="panDulceCheckbox" type="checkbox"/>
+            <label for="panDulceCheckbox">Pan Dulce</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="saladCheckbox" name="saladCheckbox" type="checkbox"/>
+            <label for="saladCheckbox">Salad</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="soupCheckbox" name="soupCheckbox" type="checkbox"/>
+            <label for="soupCheckbox">Soup</label>
+          </div>
+          <div class="inputGroup inputGroupSmall">
+            <input id="tacosCheckbox" name="tacosCheckbox" type="checkbox"/>
+            <label for="tacosCheckbox">Tacos</label>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+        <span data-feather="file-text"></span>
+        Region??
+      </a>
+    </li>
+  </ul>
+</div>
+</nav>
+
+
+        <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+          <h2>Desayuno</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="/desayuno/"><h6 class="m-2">See All >></h6></a>
+
+          <hr class="featurette-divider">
+
+          <h2>Dessert/Pan Dulce</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="./dessert/"><h6 class="m-2">See All >></h6></a>
+
+          <hr class="featurette-divider">
+
+          <h2>Dinner</h2>
+
+          <div class="row">
+
+<!-- First Card -->
+<div class="col-md-6">
+  <div class="card mb-6 shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <div class="card-body">
+      <p class="card-text">This is a wider card with supporting text below as a
+        natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div> <!-- end card body -->
+  </div> <!-- end of card -->
+</div>
+
+<!-- Second Card -->
+<div class="col-md-6">
+  <div class="card mb-6 shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <div class="card-body">
+      <p class="card-text">This is a wider card with supporting text below as a
+        natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div> <!-- end card body -->
+  </div> <!-- end of card -->
+</div>
+
+<!-- Third Card -->
+<div class="col-md-6">
+  <div class="card mb-6 shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <div class="card-body">
+      <p class="card-text">This is a wider card with supporting text below as a
+        natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div> <!-- end card body -->
+  </div> <!-- end of card -->
+</div>
+
+<!-- Fourth Card -->
+<div class="col-md-6">
+  <div class="card mb-6 shadow-sm">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+    <div class="card-body">
+      <p class="card-text">This is a wider card with supporting text below as a
+        natural lead-in to additional content. This content is a little bit longer.</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        </div>
+        <small class="text-muted">9 mins</small>
+      </div>
+    </div> <!-- end card body -->
+      </div> <!-- end of card -->
+      </div>
+
+    </div> <!-- end of row -->
+
+
+          <a href="./dinner/"><h6 class="m-2">See All >></h6></a>
+
+
+          <hr class="featurette-divider">
+
+          <h2>Drinks</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="./bebidas/"><h6 class="m-2">See All Drinks >></h6></a>
+
+          <hr class="featurette-divider">
+
+          <h2>Platos</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="./platos/"><h6 class="m-2">See All Platos >></h6></a>
+
+          <hr class="featurette-divider">
+
+          <h2>Salad</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="./salad/"><h6 class="m-2">See All Salads >></h6></a>
+
+          <hr class="featurette-divider">
+
+          <h2>Soup</h2>
+
+          <div class="row">
+
+            
+            
+
+          </div>
+
+          <a href="./soup/"><h6 class="m-2">See All Soups >></h6></a>
+
+        </main>
+      </div> <!-- end of row -->
+    </div> <!-- end of container -->
+
+
+  <script src="/assets/js/mycustomjs.js"></script>
+  <script src="/assets/js/newjs.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- jQuery Isotope Library for filtering-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+  </body>
+
+
+</html>
